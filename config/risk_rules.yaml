@@ -1,0 +1,67 @@
+# Rule risk scoring dasar.
+# Nilai dapat dikalibrasi sesuai baseline organisasi.
+
+rules:
+  - token: "sudo"
+    score: 30
+    reason: "Privilege Escalation"
+  - token: "su"
+    score: 30
+    reason: "User Switching"
+  - token: "useradd"
+    score: 35
+    reason: "Account Creation"
+  - token: "usermod"
+    score: 30
+    reason: "Account Modification"
+  - token: "passwd"
+    score: 25
+    reason: "Password Modification"
+  - token: "curl"
+    score: 15
+    reason: "External Download"
+  - token: "wget"
+    score: 15
+    reason: "External Download"
+  - token: "nc"
+    score: 35
+    reason: "Network Utility"
+  - token: "ncat"
+    score: 35
+    reason: "Network Utility"
+  - token: "bash -i"
+    score: 45
+    reason: "Interactive Shell"
+  - token: "python -c"
+    score: 35
+    reason: "Command Execution"
+  - token: "chmod"
+    score: 15
+    reason: "Permission Modification"
+  - token: "chown"
+    score: 15
+    reason: "Ownership Modification"
+  - token: "systemctl"
+    score: 20
+    reason: "Service Modification"
+  - token: "iptables"
+    score: 30
+    reason: "Firewall Modification"
+  - token: "ufw"
+    score: 30
+    reason: "Firewall Modification"
+  - token: "docker"
+    score: 20
+    reason: "Container Activity"
+  - token: "kubectl"
+    score: 20
+    reason: "Kubernetes Activity"
+  - token: "rm"
+    score: 20
+    reason: "File Deletion"
+  - token: "scp"
+    score: 15
+    reason: "File Transfer"
+  - token: "ssh"
+    score: 10
+    reason: "Outbound SSH"

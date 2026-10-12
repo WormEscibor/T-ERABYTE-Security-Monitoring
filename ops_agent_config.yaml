@@ -1,0 +1,16 @@
+# Konfigurasi Ops Agent untuk mengirim audit.log ke Cloud Logging.
+# Terapkan pada VM yang memang perlu command-level monitoring.
+
+logging:
+  receivers:
+    gcp_auditd:
+      type: files
+      include_paths:
+        - /var/log/audit/audit.log
+      record_log_file_path: true
+
+  service:
+    pipelines:
+      gcp_auditd_pipeline:
+        receivers:
+          - gcp_auditd

@@ -1,0 +1,31 @@
+# Aturan deteksi Dashboard Monitoring fokus.
+# Semua ambang di file ini dapat dikalibrasi tanpa mengubah kode.
+# Nilai di bawah adalah default yang ditampilkan di setiap halaman UI.
+
+office_hours:
+  # Jam kerja: 08:00–17:00 WIB (inklusif; 17:00:00 masih jam kerja).
+  start: '08:00'
+  end: '17:00'
+  timezone: Asia/Jakarta
+  # 0 = Senin ... 4 = Jumat, 5 = Sabtu, 6 = Minggu.
+  working_days: [0, 1, 2, 3, 4]
+
+download:
+  # Jendela agregasi per user dalam menit.
+  window_minutes: 60
+  # Total volume data (MB) yang ditarik satu user dalam 1 jendela.
+  # 1024 MB = 1 GB.
+  volume_threshold_mb: 1024
+  # Cadangan bila log tidak mencatat ukuran byte: jumlah operasi unduh
+  # (DATA_ACCESS / storage.objects.get / ekspor) dalam 1 jendela.
+  ops_threshold: 100
+
+critical_command:
+  # Skor gabungan token dari config/risk_rules.yaml.
+  # >= 60 = level HIGH/CRITICAL (contoh: "sudo useradd" = 65, "sudo nc" = 65).
+  score_threshold: 60
+
+forbidden:
+  # Jumlah kejadian DENIED/FORBIDDEN/UNAUTHORIZED/PERMISSION_DENIED
+  # per user dalam periode query agar dianggap "sering".
+  threshold: 5

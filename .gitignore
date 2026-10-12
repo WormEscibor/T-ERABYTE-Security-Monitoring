@@ -1,0 +1,29 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Environment secrets
+.env
+.streamlit/secrets.toml
+
+# Data & log stores (jangan commit log produksi ke repo)
+data/logstore/
+data/.sync-status.json
+logs/*.log
+
+# File log besar yang diunduh dari GCP (bisa puluhan MB, jangan di-commit)
+downloaded-logs-*.json
+logs-*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

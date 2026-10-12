@@ -1,0 +1,21 @@
+T-ERABYTE Security Monitoring 1.1.0 — Release Manifest
+Tanggal rilis: 7 Oktober 2026
+
+Perubahan utama:
+- Pilihan Human Only / Semua Log diterapkan ke seluruh menu analisis.
+- Data sumber tidak diubah; cakupan hanya menentukan subset analisis.
+- Resolusi identitas diperbaiki untuk UNKNOWN dan identitas sistem.
+- Debug memuat struktur dan alur ringkas aplikasi.
+- UI dan PDF menggunakan token palet Kementerian Kesehatan Republik Indonesia dari core/constants.py.
+- Dokumentasi, CHANGELOG, pengujian cakupan, dan regresi dataset ditambahkan.
+
+Validasi:
+- compileall: PASS
+- pytest: 25 passed
+- Dataset logs-20261007-161759: 10.000 entri, pipeline COMPLETED, 0 error
+- Human Only: 0 event manusia pada dataset validasi
+- Semua Log: 10.000 event; 6.168 temuan luar jam kerja; 1 temuan akses ditolak berulang; 0 temuan pada tiga aturan lainnya
+- PDF Human Only dan Semua Log: valid
+
+Catatan:
+- Render runtime Streamlit tidak dapat diuji pada lingkungan ini karena Streamlit tidak terpasang dan akses jaringan untuk memasang dependency tidak tersedia.

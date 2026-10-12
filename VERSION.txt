@@ -1,0 +1,4 @@
+Security Monitoring (T-ERABYTE) 1.1.0
+Cakupan analisis Human Only / Semua Log pada seluruh menu, klasifikasi identitas diperbaiki,
+Debug dilengkapi struktur dan alur aplikasi, dan tampilan diselaraskan dengan palet Kementerian Kesehatan Republik Indonesia.
+Rilis: 7 Oktober 2026.
