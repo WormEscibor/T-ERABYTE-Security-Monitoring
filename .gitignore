@@ -1,3 +1,6 @@
+# AI assistant internal folders (jangan di-commit)
+.commandcode/
+
 # Virtual environment
 .venv/
 
